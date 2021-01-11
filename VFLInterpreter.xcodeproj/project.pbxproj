@@ -16,6 +16,8 @@
 		220754FC25A7FB3C00701FA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 220754FA25A7FB3C00701FA5 /* Main.storyboard */; };
 		220754FE25A7FB4000701FA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 220754FD25A7FB4000701FA5 /* Assets.xcassets */; };
 		2207550125A7FB4000701FA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 220754FF25A7FB4000701FA5 /* LaunchScreen.storyboard */; };
+		220755C825AC6F3700701FA5 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220755C725AC6F3700701FA5 /* Token.swift */; };
+		220755CD25AC74FB00701FA5 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220755CC25AC74FB00701FA5 /* Scanner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		220754FD25A7FB4000701FA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2207550025A7FB4000701FA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2207550225A7FB4000701FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		220755C725AC6F3700701FA5 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		220755CC25AC74FB00701FA5 /* Scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				220754D525A7FA8A00701FA5 /* VFLInterpreter.h */,
+				220755C725AC6F3700701FA5 /* Token.swift */,
+				220755CC25AC74FB00701FA5 /* Scanner.swift */,
 				220754D625A7FA8A00701FA5 /* Info.plist */,
 			);
 			path = VFLInterpreter;
@@ -201,6 +207,7 @@
 				TargetAttributes = {
 					220754D125A7FA8A00701FA5 = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
 					};
 					220754DA25A7FA8A00701FA5 = {
 						CreatedOnToolsVersion = 12.3;
@@ -262,6 +269,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				220755CD25AC74FB00701FA5 /* Scanner.swift in Sources */,
+				220755C825AC6F3700701FA5 /* Token.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +447,7 @@
 		220754E725A7FA8A00701FA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -453,6 +463,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = CB.VFLInterpreter;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -461,6 +472,7 @@
 		220754E825A7FA8A00701FA5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -484,6 +496,7 @@
 		220754EA25A7FA8A00701FA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VFLInterpreterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -501,6 +514,7 @@
 		220754EB25A7FA8A00701FA5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VFLInterpreterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
