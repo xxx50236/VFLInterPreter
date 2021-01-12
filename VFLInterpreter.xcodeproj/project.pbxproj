@@ -18,6 +18,8 @@
 		2207550125A7FB4000701FA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 220754FF25A7FB4000701FA5 /* LaunchScreen.storyboard */; };
 		220755C825AC6F3700701FA5 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220755C725AC6F3700701FA5 /* Token.swift */; };
 		220755CD25AC74FB00701FA5 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220755CC25AC74FB00701FA5 /* Scanner.swift */; };
+		22075ACC25ADCDF200701FA5 /* DFAState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22075ACB25ADCDF200701FA5 /* DFAState.swift */; };
+		22075AD125ADCE0B00701FA5 /* DFA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22075AD025ADCE0B00701FA5 /* DFA.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		2207550225A7FB4000701FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		220755C725AC6F3700701FA5 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		220755CC25AC74FB00701FA5 /* Scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
+		22075ACB25ADCDF200701FA5 /* DFAState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFAState.swift; sourceTree = "<group>"; };
+		22075AD025ADCE0B00701FA5 /* DFA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFA.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 				220754D525A7FA8A00701FA5 /* VFLInterpreter.h */,
 				220755C725AC6F3700701FA5 /* Token.swift */,
 				220755CC25AC74FB00701FA5 /* Scanner.swift */,
+				22075ACB25ADCDF200701FA5 /* DFAState.swift */,
+				22075AD025ADCE0B00701FA5 /* DFA.swift */,
 				220754D625A7FA8A00701FA5 /* Info.plist */,
 			);
 			path = VFLInterpreter;
@@ -270,7 +276,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				220755CD25AC74FB00701FA5 /* Scanner.swift in Sources */,
+				22075ACC25ADCDF200701FA5 /* DFAState.swift in Sources */,
 				220755C825AC6F3700701FA5 /* Token.swift in Sources */,
+				22075AD125ADCE0B00701FA5 /* DFA.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,16 +10,35 @@ import Foundation
 struct Scanner {
     
     let source: String
+    private let dfaMap: [Character: DFA] = [:]
     
-    private var tokens: [Token] = []
-    
+    init(input: String) {
+        
+        source = input
+        
+        
+        
+    }
 }
 
-// MARK: Scan Method
 extension Scanner {
     func scanTokens() -> [Token] {
         
+        var tokens: [Token] = []
         
+        for ch in source {
+            
+            if ch == "[" {
+                
+            }
+            
+        }
         return tokens
+    }
+}
+
+extension Scanner {
+    var dfas: [DFA] {
+        return []
     }
 }
