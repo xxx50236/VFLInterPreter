@@ -28,7 +28,6 @@ enum TokenType: String {
 struct Token {
     let type: TokenType
     let lexeme: String
-    let line: Int
 }
 
 extension Token: CustomStringConvertible {

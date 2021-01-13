@@ -10,6 +10,7 @@ import Foundation
 struct DFAState: RawRepresentable {
     static let start = DFAState(rawValue: "start")
     static let end = DFAState(rawValue: "end")
+    static let invalid = DFAState(rawValue: "invalid")
     
     let rawValue: String
 }
