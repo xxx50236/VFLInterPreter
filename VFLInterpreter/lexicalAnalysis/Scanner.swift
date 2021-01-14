@@ -8,9 +8,9 @@
 import Foundation
 
 class Scanner {
-    /// input string
+    
     let str: String
-    /// left string that need to process
+    
     private(set) var leftStr: Substring
     
     private var current: Int = 0

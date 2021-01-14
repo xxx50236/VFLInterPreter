@@ -19,8 +19,8 @@
 		220755C825AC6F3700701FA5 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220755C725AC6F3700701FA5 /* Token.swift */; };
 		220755CD25AC74FB00701FA5 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220755CC25AC74FB00701FA5 /* Scanner.swift */; };
 		22075ACC25ADCDF200701FA5 /* DFAState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22075ACB25ADCDF200701FA5 /* DFAState.swift */; };
-		22075AD125ADCE0B00701FA5 /* DFA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22075AD025ADCE0B00701FA5 /* DFA.swift */; };
-		22075AE325AEE6C000701FA5 /* LeftBraceDFA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22075AE225AEE6C000701FA5 /* LeftBraceDFA.swift */; };
+		224361D125B0926E00013CD5 /* FSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224361D025B0926E00013CD5 /* FSM.swift */; };
+		224361DC25B0A00C00013CD5 /* DFA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224361DB25B0A00C00013CD5 /* DFA.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +51,8 @@
 		220755C725AC6F3700701FA5 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		220755CC25AC74FB00701FA5 /* Scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
 		22075ACB25ADCDF200701FA5 /* DFAState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFAState.swift; sourceTree = "<group>"; };
-		22075AD025ADCE0B00701FA5 /* DFA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFA.swift; sourceTree = "<group>"; };
-		22075AE225AEE6C000701FA5 /* LeftBraceDFA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftBraceDFA.swift; sourceTree = "<group>"; };
+		224361D025B0926E00013CD5 /* FSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSM.swift; sourceTree = "<group>"; };
+		224361DB25B0A00C00013CD5 /* DFA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFA.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				22075ACB25ADCDF200701FA5 /* DFAState.swift */,
-				22075AD025ADCE0B00701FA5 /* DFA.swift */,
-				22075AE225AEE6C000701FA5 /* LeftBraceDFA.swift */,
+				224361DB25B0A00C00013CD5 /* DFA.swift */,
+				224361D025B0926E00013CD5 /* FSM.swift */,
 			);
 			path = DFA;
 			sourceTree = "<group>";
@@ -296,9 +296,9 @@
 			files = (
 				220755CD25AC74FB00701FA5 /* Scanner.swift in Sources */,
 				22075ACC25ADCDF200701FA5 /* DFAState.swift in Sources */,
-				22075AE325AEE6C000701FA5 /* LeftBraceDFA.swift in Sources */,
+				224361DC25B0A00C00013CD5 /* DFA.swift in Sources */,
 				220755C825AC6F3700701FA5 /* Token.swift in Sources */,
-				22075AD125ADCE0B00701FA5 /* DFA.swift in Sources */,
+				224361D125B0926E00013CD5 /* FSM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
