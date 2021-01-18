@@ -1,19 +1,19 @@
 //
-//  DFA.swift
+//  NFA.swift
 //  VFLInterpreter
 //
-//  Created by CB on 2021/1/14.
+//  Created by CB on 2021/1/18.
 //
 
 import Foundation
 
-class DFA {
+class NFA {
 
-    private var _state: DFAState = .invalid
+    private var _state: FAState = .invalid
     private var _token: Token?
-    private var _fsm: FSM
+    private var _fsm: FiniteAutomaton
     
-    required init(fsm: FSM) {
+    required init(fsm: FiniteAutomaton) {
         _fsm = fsm
     }
     
@@ -28,12 +28,15 @@ class DFA {
         var subStr = str
         var lexeme = ""
         
-        repeat {
+        _state = .start
+        
+        while state != .invalid || _state != .end {
+            
             _state = _fsm.stateTransform(from: _state, accept: subStr.first)
             lexeme += String(subStr.removeFirst())
             offset += 1
             
-        } while state != .invalid || _state != .end
+        }
         
         if _state == .end {
             _token = Token(type: _fsm.tokenType, lexeme: lexeme)
@@ -43,12 +46,12 @@ class DFA {
     }
     
     func triggerStartState(ch: Character) -> Bool {
-        return _fsm.stateTransform(from: .invalid, accept: ch) == .start
+        return _fsm.triggerStartState(from: ch)
     }
 }
 
-extension DFA {
-    var state: DFAState {
+extension NFA {
+    var state: FAState {
         return _state
     }
     

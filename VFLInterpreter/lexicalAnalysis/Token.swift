@@ -10,7 +10,7 @@ import Foundation
 enum TokenType: String {
     case orientation
     case superview
-    case viewName
+    case identifier
     case connection
     
     case leftParen

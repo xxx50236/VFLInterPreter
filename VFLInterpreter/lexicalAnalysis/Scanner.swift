@@ -33,11 +33,11 @@ extension Scanner {
             return nil
         }
         
-        var matchedDFA: DFA?
+        var matchedDFA: NFA?
       
         for dfa in dfas where dfa.triggerStartState(ch: ch) {
             let res = dfa.process(str: leftStr, from: current)
-            if dfa.token != nil && dfa.state == DFAState.end && res.current > current {
+            if dfa.token != nil && dfa.state == FAState.end && res.current > current {
                 leftStr = res.left
                 current = res.current
 
@@ -55,7 +55,7 @@ extension Scanner {
 }
 
 extension Scanner {
-    var dfas: [DFA] {
+    var dfas: [NFA] {
         return []
     }
 }
