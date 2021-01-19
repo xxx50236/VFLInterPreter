@@ -19,14 +19,18 @@ struct EqualEqualFA: FiniteAutomaton {
             return state
         }
         
-        if state == .equal {
-            return ch == equal ? .end : .invalid
+        if state == .start {
+            return ch == equal ? equalState : .invalid
+        } else if state == equalState {
+            return ch == equal ? acceptState : .invalid
+        } else if state == acceptState {
+            return ch == equal ? .invalid : .end
         } else {
-            return ch == equal ? .equal : .invalid
+            return .end
         }
     }
     
-    func triggerStartState(from ch: Character) -> Bool {
+    func matched(accept ch: Character) -> Bool {
         return ch == equal
     }
 }
@@ -37,7 +41,12 @@ extension EqualEqualFA {
     }
 }
 
-extension FAState {
-    fileprivate static let equal = FAState(rawValue: "equal")
+extension EqualEqualFA {
+    var equalState: FAState {
+        return FAState(rawValue: "=")
+    }
+    
+    var acceptState: FAState {
+        return FAState(rawValue: "==")
+    }
 }
-

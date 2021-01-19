@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct IdentifierFA {
+struct IdentifierFA: FiniteAutomaton {
     
     var tokenType: TokenType {
         return .identifier
@@ -18,19 +18,22 @@ struct IdentifierFA {
             return state
         }
         
-        if state == .identifier {
-            return ch.isLetter || ch.isNumber ? .identifier : .end
+        if state == .start {
+            return ch.isLetter || ch.isNumber ? acceptState : .invalid
+        } else if state == acceptState {
+            return ch.isLetter || ch.isNumber ? acceptState : .end
         } else {
-            return ch.isLetter || ch.isNumber ? .identifier : .invalid
+            return .invalid
         }
     }
     
-    func triggerStartState(from ch: Character) -> Bool {
+    func matched(accept ch: Character) -> Bool {
         return ch.isLetter
     }
-    
 }
 
-extension FAState {
-    fileprivate static let identifier = FAState(rawValue: "identifier")
+extension IdentifierFA {
+    var acceptState: FAState {
+        return FAState(rawValue: "identifier")
+    }
 }

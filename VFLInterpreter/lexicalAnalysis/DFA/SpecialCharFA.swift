@@ -1,40 +1,39 @@
 //
-//  NumberFA.swift
+//  SpecialCharFA.swift
 //  VFLInterpreter
 //
-//  Created by CB on 2021/1/18.
+//  Created by ChenBin on 2021/1/19.
 //
 
 import Foundation
 
-struct NumberFA: FiniteAutomaton {
+struct SpecialCharFA: FiniteAutomaton {
     
-    var tokenType: TokenType {
-        return .number
-    }
+    let ch: Character
+    let tokenType: TokenType
     
     func stateTransform(from state: FAState, accept ch: Character?) -> FAState {
         
-        guard let ch = ch else {
+        guard let char = ch else {
             return state
         }
         
         if state == .start {
-            return ch.isNumber ? acceptState : .invalid
+            return char == self.ch ? acceptState : .invalid
         } else if state == acceptState {
-            return ch.isNumber ? acceptState : .end
+            return char == self.ch ? .invalid : .end
         } else {
             return .invalid
         }
     }
     
     func matched(accept ch: Character) -> Bool {
-        return ch.isNumber
+        return ch == self.ch
     }
 }
 
-extension NumberFA {
+extension SpecialCharFA {
     var acceptState: FAState {
-        return FAState(rawValue: "number")
+        return FAState(rawValue: String(ch))
     }
 }

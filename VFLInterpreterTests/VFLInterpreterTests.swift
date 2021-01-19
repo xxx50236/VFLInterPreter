@@ -19,8 +19,23 @@ class VFLInterpreterTests: XCTestCase {
     }
 
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let scanner = VFLScanner(input: "[button]-[textField]")
+        var tokens: [Token] = []
+        
+        while let token = scanner?.nextToken() {
+            tokens.append(token)
+        }
+        
+        XCTAssert(tokens[0].type == .leftBrace && tokens[0].lexeme == "[")
+        XCTAssert(tokens[1].type == .identifier && tokens[1].lexeme == "button")
+        XCTAssert(tokens[2].type == .rightBrace && tokens[2].lexeme == "]")
+        XCTAssert(tokens[3].type == .connection && tokens[3].lexeme == "-")
+        XCTAssert(tokens[4].type == .leftBrace && tokens[4].lexeme == "[")
+        XCTAssert(tokens[5].type == .identifier && tokens[5].lexeme == "textField")
+        XCTAssert(tokens[6].type == .rightBrace && tokens[6].lexeme == "]")
+        
+        
     }
 
     func testPerformanceExample() throws {

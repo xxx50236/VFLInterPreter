@@ -19,14 +19,18 @@ struct LessEqualFA: FiniteAutomaton {
             return state
         }
         
-        if state == .less {
-            return ch == "=" ? .end : .invalid
+        if state == .start {
+            return ch == less ? lessState : .invalid
+        } else if state == lessState {
+            return ch == "=" ? acceptState : .invalid
+        } else if state == acceptState {
+            return .end
         } else {
-            return ch == less ? .less : .invalid
+            return .invalid
         }
     }
     
-    func triggerStartState(from ch: Character) -> Bool {
+    func matched(accept ch: Character) -> Bool {
         return ch == less
     }
 }
@@ -37,6 +41,12 @@ extension LessEqualFA {
     }
 }
 
-extension FAState {
-    fileprivate static let less = FAState(rawValue: "less")
+extension LessEqualFA {
+    var lessState: FAState {
+        return FAState(rawValue: "<")
+    }
+    
+    var acceptState: FAState {
+        return FAState(rawValue: "<=")
+    }
 }

@@ -19,14 +19,18 @@ struct GreaterEqualFA: FiniteAutomaton {
             return state
         }
         
-        if state == .greater {
-            return ch == "=" ? .end : .invalid
+        if state == .start {
+            return ch == greater ? greatState : .invalid
+        } else if state == greatState {
+            return ch == "=" ? acceptState : .invalid
+        } else if state == acceptState {
+            return .end
         } else {
-            return ch == greater ? .greater : .invalid
+            return .invalid
         }
     }
     
-    func triggerStartState(from ch: Character) -> Bool {
+    func matched(accept ch: Character) -> Bool {
         return ch == greater
     }
 }
@@ -37,6 +41,12 @@ extension GreaterEqualFA {
     }
 }
 
-extension FAState {
-    fileprivate static let greater = FAState(rawValue: "great")
+extension GreaterEqualFA {
+    var greatState: FAState {
+        return FAState(rawValue: ">")
+    }
+    
+    var acceptState: FAState {
+        return FAState(rawValue: ">=")
+    }
 }

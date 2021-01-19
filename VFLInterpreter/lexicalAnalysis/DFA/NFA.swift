@@ -11,16 +11,16 @@ class NFA {
 
     private var _state: FAState = .invalid
     private var _token: Token?
-    private var _fsm: FiniteAutomaton
+    private var _fa: FiniteAutomaton
     
-    required init(fsm: FiniteAutomaton) {
-        _fsm = fsm
+    required init(fa: FiniteAutomaton) {
+        _fa = fa
     }
     
     func process(str: Substring,
                  from position: Int) -> (left: Substring, current: Int) {
         
-        guard let ch = str.first, triggerStartState(ch: ch) else {
+        guard let ch = str.first, matched(accept: ch) else {
             return (str, position)
         }
         
@@ -30,23 +30,29 @@ class NFA {
         
         _state = .start
         
-        while state != .invalid || _state != .end {
+        while let firstChar = subStr.first {
             
-            _state = _fsm.stateTransform(from: _state, accept: subStr.first)
+            _state = _fa.stateTransform(from: _state, accept: firstChar)
+            
+            if _state == .invalid || _state == .end {
+                break
+            }
+            
             lexeme += String(subStr.removeFirst())
             offset += 1
             
         }
-        
-        if _state == .end {
-            _token = Token(type: _fsm.tokenType, lexeme: lexeme)
+    
+        if _state != .invalid {
+            _token = Token(type: _fa.tokenType, lexeme: lexeme)
+            _state = .end
         }
         
-        return _state == .end ? (subStr, position + offset) : (str, position)
+        return _state != .invalid ? (subStr, position + offset) : (str, position)
     }
     
-    func triggerStartState(ch: Character) -> Bool {
-        return _fsm.triggerStartState(from: ch)
+    func matched(accept ch: Character) -> Bool {
+        return _fa.matched(accept: ch)
     }
 }
 

@@ -13,5 +13,5 @@ protocol FiniteAutomaton {
     
     func stateTransform(from state: FAState, accept ch: Character?) -> FAState
     
-    func triggerStartState(from ch: Character) -> Bool
+    func matched(accept ch: Character) -> Bool
 }

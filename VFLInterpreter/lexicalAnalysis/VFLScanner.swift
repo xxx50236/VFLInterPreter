@@ -1,5 +1,5 @@
 //
-//  Scanner.swift
+//  VFLScanner.swift
 //  VFLInterpreter
 //
 //  Created by ChenBin on 2021/1/11.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Scanner {
+public class VFLScanner {
     
     let str: String
     
@@ -16,7 +16,7 @@ class Scanner {
     private var current: Int = 0
     private var tokens: [Token] = []
     
-    required init?(input: String?) {
+    public required init?(input: String?) {
         guard let input = input, !input.isEmpty else {
             return nil
         }
@@ -26,7 +26,7 @@ class Scanner {
     }
 }
 
-extension Scanner {
+extension VFLScanner {
     
     func nextToken() -> Token? {
         guard let ch = leftStr.first else {
@@ -35,7 +35,7 @@ extension Scanner {
         
         var matchedDFA: NFA?
       
-        for dfa in dfas where dfa.triggerStartState(ch: ch) {
+        for dfa in dfas where dfa.matched(accept: ch) {
             let res = dfa.process(str: leftStr, from: current)
             if dfa.token != nil && dfa.state == FAState.end && res.current > current {
                 leftStr = res.left
@@ -54,8 +54,14 @@ extension Scanner {
     
 }
 
-extension Scanner {
+extension VFLScanner {
     var dfas: [NFA] {
-        return []
+        
+        let leftBraceNFA = NFA(fa: SpecialCharFA(ch: "[", tokenType: .leftBrace))
+        let rightBraceNFA = NFA(fa: SpecialCharFA(ch: "]", tokenType: .rightBrace))
+        let idNFA = NFA(fa: IdentifierFA())
+        let connectionNFA = NFA(fa: SpecialCharFA(ch: "-", tokenType: .connection))
+        
+        return [leftBraceNFA, rightBraceNFA, idNFA, connectionNFA]
     }
 }
