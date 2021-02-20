@@ -19,6 +19,8 @@
 		220755C825AC6F3700701FA5 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220755C725AC6F3700701FA5 /* Token.swift */; };
 		220755CD25AC74FB00701FA5 /* VFLScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220755CC25AC74FB00701FA5 /* VFLScanner.swift */; };
 		2207654225B6FF2100701FA5 /* SpecialCharFA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207654125B6FF2100701FA5 /* SpecialCharFA.swift */; };
+		2237AAD025E0AAF20065FB21 /* Automaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2237AACF25E0AAF20065FB21 /* Automaton.swift */; };
+		2237AAD525E0AE0C0065FB21 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2237AAD425E0AE0C0065FB21 /* State.swift */; };
 		224361D125B0926E00013CD5 /* FiniteAutomaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224361D025B0926E00013CD5 /* FiniteAutomaton.swift */; };
 		224361EE25B5C55A00013CD5 /* NFA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224361ED25B5C55A00013CD5 /* NFA.swift */; };
 		224361F625B5C59000013CD5 /* FAState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224361F525B5C59000013CD5 /* FAState.swift */; };
@@ -27,6 +29,8 @@
 		2243620B25B5CAF600013CD5 /* EqualEqualFA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2243620A25B5CAF600013CD5 /* EqualEqualFA.swift */; };
 		2243621025B5CF4600013CD5 /* GreaterEqualFA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2243620F25B5CF4600013CD5 /* GreaterEqualFA.swift */; };
 		2243622025B5D02900013CD5 /* LessEqualFA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2243621F25B5D02900013CD5 /* LessEqualFA.swift */; };
+		22FF5DF125B9AB24002262F0 /* GreaterFA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FF5DF025B9AB24002262F0 /* GreaterFA.swift */; };
+		22FF5DFE25B9B011002262F0 /* LessFA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FF5DFD25B9B011002262F0 /* LessFA.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,8 @@
 		220755C725AC6F3700701FA5 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		220755CC25AC74FB00701FA5 /* VFLScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VFLScanner.swift; sourceTree = "<group>"; };
 		2207654125B6FF2100701FA5 /* SpecialCharFA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialCharFA.swift; sourceTree = "<group>"; };
+		2237AACF25E0AAF20065FB21 /* Automaton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Automaton.swift; sourceTree = "<group>"; };
+		2237AAD425E0AE0C0065FB21 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		224361D025B0926E00013CD5 /* FiniteAutomaton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiniteAutomaton.swift; sourceTree = "<group>"; };
 		224361ED25B5C55A00013CD5 /* NFA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFA.swift; sourceTree = "<group>"; };
 		224361F525B5C59000013CD5 /* FAState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAState.swift; sourceTree = "<group>"; };
@@ -65,6 +71,8 @@
 		2243620A25B5CAF600013CD5 /* EqualEqualFA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualEqualFA.swift; sourceTree = "<group>"; };
 		2243620F25B5CF4600013CD5 /* GreaterEqualFA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreaterEqualFA.swift; sourceTree = "<group>"; };
 		2243621F25B5D02900013CD5 /* LessEqualFA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessEqualFA.swift; sourceTree = "<group>"; };
+		22FF5DF025B9AB24002262F0 /* GreaterFA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreaterFA.swift; sourceTree = "<group>"; };
+		22FF5DFD25B9B011002262F0 /* LessFA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessFA.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +159,8 @@
 			children = (
 				220755C725AC6F3700701FA5 /* Token.swift */,
 				220755CC25AC74FB00701FA5 /* VFLScanner.swift */,
+				2237AACF25E0AAF20065FB21 /* Automaton.swift */,
+				2237AAD425E0AE0C0065FB21 /* State.swift */,
 				22075ADC25AEE61900701FA5 /* DFA */,
 			);
 			path = lexicalAnalysis;
@@ -168,6 +178,8 @@
 				2243620A25B5CAF600013CD5 /* EqualEqualFA.swift */,
 				2243620F25B5CF4600013CD5 /* GreaterEqualFA.swift */,
 				2243621F25B5D02900013CD5 /* LessEqualFA.swift */,
+				22FF5DF025B9AB24002262F0 /* GreaterFA.swift */,
+				22FF5DFD25B9B011002262F0 /* LessFA.swift */,
 			);
 			path = DFA;
 			sourceTree = "<group>";
@@ -313,12 +325,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				224361F625B5C59000013CD5 /* FAState.swift in Sources */,
+				22FF5DFE25B9B011002262F0 /* LessFA.swift in Sources */,
 				2243620625B5C9DC00013CD5 /* NumberFA.swift in Sources */,
 				2243620B25B5CAF600013CD5 /* EqualEqualFA.swift in Sources */,
 				2207654225B6FF2100701FA5 /* SpecialCharFA.swift in Sources */,
 				224361EE25B5C55A00013CD5 /* NFA.swift in Sources */,
 				220755CD25AC74FB00701FA5 /* VFLScanner.swift in Sources */,
+				2237AAD525E0AE0C0065FB21 /* State.swift in Sources */,
 				220755C825AC6F3700701FA5 /* Token.swift in Sources */,
+				2237AAD025E0AAF20065FB21 /* Automaton.swift in Sources */,
+				22FF5DF125B9AB24002262F0 /* GreaterFA.swift in Sources */,
 				224361D125B0926E00013CD5 /* FiniteAutomaton.swift in Sources */,
 				224361FE25B5C99800013CD5 /* IdentifierFA.swift in Sources */,
 				2243622025B5D02900013CD5 /* LessEqualFA.swift in Sources */,

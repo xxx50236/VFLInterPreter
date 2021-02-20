@@ -20,6 +20,9 @@ enum TokenType: String {
     
     case number
     
+    case equal
+    case greater
+    case less
     case equalEqual
     case greaterEqual
     case lessEqual
