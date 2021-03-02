@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TokenType: String {
+public enum TokenType: String {
     case orientation
     case superview
     case identifier
@@ -28,13 +28,13 @@ enum TokenType: String {
     case lessEqual
 }
 
-struct Token {
+public struct Token {
     let type: TokenType
     let lexeme: String
 }
 
 extension Token: CustomStringConvertible {
-    var description: String {
+    public var description: String {
         return "\(type) \(lexeme)"
     }
 }

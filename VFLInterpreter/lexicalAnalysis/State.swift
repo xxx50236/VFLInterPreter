@@ -9,7 +9,7 @@ import Foundation
 
 public class State {
     
-    public let accepting: Bool
+    public var accepting: Bool
     
     public private(set) var transitions: [Character: State] = [:]
     
